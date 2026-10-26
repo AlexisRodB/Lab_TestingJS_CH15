@@ -1,0 +1,16 @@
+{
+  "curso": "🅿️ Parqueadero La Esquina · Pruebas con Jest",
+  "fechaLimite": "",
+  "patronTest": "^test\\(",
+  "entregables": ["parqueadero/tarifas.js", "parqueadero/tarifas.test.js"],
+  "protegidos": ["tests/", "scripts/", ".github/", "package.json", "package-lock.json"],
+  "ejercicios": [
+    { "id": "01", "titulo": "Hacer pasar pruebas", "test": "tests/01-tarifa-por-hora.test.js" },
+    { "id": "02", "titulo": "Depurar sin tocar prueba", "test": "tests/02-horas-a-cobrar.test.js" },
+    { "id": "03", "titulo": "Tus pruebas: minutos", "test": "tests/03-pruebas-minutos.test.js" },
+    { "id": "04", "titulo": "Tus pruebas: el tope", "test": "tests/04-pruebas-tope.test.js" },
+    { "id": "05", "titulo": "Integración: el cobro", "test": "tests/05-calcular-cobro.test.js" },
+    { "id": "06", "titulo": "TDD: pruebas del sello", "test": "tests/06-tdd-pruebas-sello.test.js" },
+    { "id": "07", "titulo": "TDD: código del sello", "test": "tests/07-tdd-codigo-sello.test.js" }
+  ]
+}

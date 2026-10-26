@@ -1,0 +1,17 @@
+{
+  "name": "lab-testing-ch15",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lab de pruebas calificable · Parqueadero La Esquina · Generation Colombia Cohorte 15",
+  "scripts": {
+    "test": "jest",
+    "nota": "node scripts/calificar.js"
+  },
+  "jest": {
+    "roots": ["<rootDir>/parqueadero"],
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "jest": "30.5.2"
+  }
+}
