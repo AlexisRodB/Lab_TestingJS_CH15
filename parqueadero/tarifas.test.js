@@ -48,11 +48,37 @@ describe("horasACobrar", () => {
 // ===== Ejercicio 03 · Escribe tú las pruebas (mínimo 3) =====
 describe("calcularMinutos", () => {
     // Tu primera prueba aquí
+    test("calcula correctamente los minutos entre 07:45 y 09:10", () => {
+        expect(calcularMinutos("07:45", "09:10")).toBe(85);
+    });
+
+    test("calcula minutos en un intervalo corto de 10 minutos", () => {
+        expect(calcularMinutos("08:00", "08:10")).toBe(10);
+    });
+
+    test("calcula minutos cruzando de una hora a otra", () => {
+        expect(calcularMinutos("08:50", "10:15")).toBe(85);
+    });
 });
 
 // ===== Ejercicio 04 · Escribe tú las pruebas (mínimo 4, con carros y motos) =====
 describe("aplicarTope", () => {
     // Tu primera prueba aquí
+    test("un carro que supera el tope de 24000 paga exactamente 24000", () => {
+        expect(aplicarTope(39000, "carro")).toBe(24000);
+    });
+
+    test("un carro por debajo del tope paga su valor normal", () => {
+        expect(aplicarTope(6000, "carro")).toBe(6000);
+    });
+
+    test("una moto que supera el tope de 12000 paga exactamente 12000", () => {
+        expect(aplicarTope(15000, "moto")).toBe(12000);
+    });
+
+    test("una moto por debajo del tope paga su valor normal", () => {
+        expect(aplicarTope(4500, "moto")).toBe(4500);
+    });
 });
 
 // ===== Ejercicio 05 · Estas pruebas ya están escritas: haz que pasen =====
@@ -78,4 +104,19 @@ describe("calcularCobro", () => {
 // Usa la tabla de criterios que está en tarifas.js, encima de aplicarSello.
 describe("aplicarSello", () => {
     // Tu primera prueba aquí
+    test("descuenta una hora de carro ($3000) a un cobro de $6000 dejando $3000", () => {
+        expect(aplicarSello(6000, "carro")).toBe(3000);
+    });
+
+    test("descuenta una hora de moto ($1500) a un cobro de $4500 dejando $3000", () => {
+        expect(aplicarSello(4500, "moto")).toBe(3000);
+    });
+
+    test("descuenta una hora de carro ($3000) a un cobro exacto de $3000 dejando 0", () => {
+        expect(aplicarSello(3000, "carro")).toBe(0);
+    });
+
+    test("un cobro en 0 con sello de carro nunca queda en negativo, se queda en 0", () => {
+        expect(aplicarSello(0, "carro")).toBe(0);
+    });
 });
